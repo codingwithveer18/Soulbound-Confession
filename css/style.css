@@ -51,7 +51,7 @@ h6 {
     font-weight: normal;
     line-height: 120% !important;
     color: #1f1f1f;
-    margin: 0
+    margin: 10px;
 }
 
 h1 {
@@ -205,7 +205,7 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .main-top{
-	background: #12557f;
+	background: #000000;
 }
 .left-top a{
 	display: inline-block;
@@ -553,7 +553,7 @@ button:focus{
 
 
 .about-box{
-	padding: 70px 0px;
+	padding: 70px 30px;
 }
 
 .title-box{
@@ -780,7 +780,7 @@ button:focus{
     width: 100%;
     height: 100%;
     border-radius: 3px;
-    border: 1px solid #16567f;
+    border: 3px solid #16567f;
     position: absolute;
     top: 0;
     left: 0;
@@ -795,14 +795,14 @@ button:focus{
 .serviceBox .title{
     font-size: 20px;
     font-weight: 700;
-    color: #064774;
+    color: #001b30;
     text-transform: capitalize;
     margin: 0 0 15px 0;
 	padding: 0;
 }
 .serviceBox .description{
     font-size: 15px;
-    color: #999;
+    color: #000000;
     line-height: 27px;
     margin: 0 0 10px 0;
 }
@@ -917,6 +917,7 @@ button:focus{
 }
 .well-block form .form-group button.new-btn-d.br-2 {
     border: 2px solid #12557f;
+	margin-left: 86px;
 }
 .well-block form .form-group button.new-btn-d::before {
     background: rgba(18,85,127,0.2);
@@ -1271,20 +1272,21 @@ button:focus{
 	float: left;
 }
 .icon-b{
-	width: 80px;
-	height: 80px;
-	text-align: center;
-	line-height: 80px;
-	font-size: 40px;
-	border: 2px dotted #12557f;
-	margin-right: 10px;
-	color: #00cb86;
-	border-radius: 50%;
+	width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 40px;
+    border: 2px solid #000000;
+    margin: 6px;
+    padding: 8px;
+    color: #00cb86;
+    border-radius: 30%;
 }
 
 .dit-right h4{
 	font-size: 18px;
-	color: #333333;
+	color: #000000;
 	font-weight: 600;
 	padding-bottom: 0;
 }
@@ -1303,14 +1305,13 @@ button:focus{
 	color: #00cb86;
 }
 
-.contact-block{}
 
 .contact-block .form-group .form-control{
-	background: #00cb86;
+	background: #00cb878d;
 	height: 45px;
 	font-size: 16px;
 	border: 0;
-	color: #ffffff;
+	color: #000000;
 	padding: 6px 15px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -1361,7 +1362,7 @@ select.form-control:not([size]):not([multiple]){
 }
 
 .footer-box{
-	background: #292f35;
+	background: #000000;
 	padding: 20px 0;
 }
 
