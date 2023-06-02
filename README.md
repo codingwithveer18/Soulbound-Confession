@@ -29,7 +29,7 @@ To get started with the Mental Health Repository, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
    ```shell
-   git clone https://github.com/your-username/mental-health-repo.git
+   git clone https://github.com/your-username/Soulfulcoders.git
    ```
 
 3. Explore the repository, contribute, or make use of the available resources.
