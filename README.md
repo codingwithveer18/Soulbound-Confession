@@ -1,6 +1,5 @@
 # Mental Health Awareness
-
-![SOULBOUND CONFESSION]
+ [SOULBOUND CONFESSION]
 
 ## Introduction
 
