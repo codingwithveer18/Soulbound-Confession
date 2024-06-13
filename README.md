@@ -1,5 +1,6 @@
 # Mental Health Awareness
- SOULBOUND CONFESSION
+
+SOULBOUND CONFESSION
 
 ## Introduction
 
@@ -28,10 +29,10 @@ To get started with the Mental Health Repository, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
    ```shell
-   git clone https://github.com/your-username/Soulfulcoders.git
+   git clone https://github.com/your-username/Soulbound-Confession.git
    ```
 
-3. Explore the repository, contribute, or make use of the available resources.
+2. Explore the repository, contribute, or make use of the available resources.
 
 ## Contributing
 

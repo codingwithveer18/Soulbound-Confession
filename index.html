@@ -2,651 +2,406 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Soulbound Confessions</title>
 	<meta name="keywords" content="mental health, wellness" />
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/pogo-slider.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/responsive.css" />
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-	<!-- Start header -->
-	<header class="top-header">
-		<nav class="navbar header-nav navbar-expand-lg">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image" height="50px"
-						width="300px" /></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
-						aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
-				  <span></span>
-				  <span></span>
-				  <span></span>
-				</button>
-				
-				<div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
-					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-						<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-						<li class="nav-item"><a class="nav-link" href="#appointment">Appointment</a></li>
-						<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-						<li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-						<li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
-					</ul>
-				</div>
+<body id="home" class="bg-gray-100 scroll-smooth">
+	<div class="fixed z-50 right-4 lg:right-20 bottom-4 lg:bottom-20">
+		<button id="scroll-to-top"
+			class="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg focus:outline-none">
+			<i class="fa fa-angle-up"></i>
+		</button>
+	</div>
+	<div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-black bg-opacity-50 lg:hidden"
+		onclick="toggleMobileMenu()">
+		<div id="mobile-menu" class="w-1/2">
+			<ul class="flex flex-col w-full text-lg lg:text-base divide-y-2 text-center">
+				<li class="nav-item hover:bg-gray-200 p-2 rounded-md">
+					<a class="nav-link active" href="#home" onclick="toggleMobileMenu()">Home</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#about" onclick="toggleMobileMenu()">About Us</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#services" onclick="toggleMobileMenu()">Services</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#appointment" onclick="toggleMobileMenu()">Appointment</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#blog" onclick="toggleMobileMenu()">Blogs</a>
+				</li>
+				<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+					<a class="nav-link" href="#contact" onclick="toggleMobileMenu()">Contact us</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<header class="w-full sticky top-0 bg-white shadow-lg z-50">
+		<nav class="container mx-auto px-4 py-2 flex items-center justify-between">
+			<a href="index.html">
+				<img src="images/logo.png" alt="Soulbound Confessions" height="30px" class="w-1/2" />
+			</a>
+			<button id="mobile-menu-btn"
+				class="lg:hidden focus:outline-none block bg-gray-800 text-white px-3 py-2 rounded-md">
+				<span class="sr-only">Toggle menu</span>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+					<path fill-rule="evenodd"
+						d="M3 5a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1zM3 9a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1zM3 13a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1z"
+						clip-rule="evenodd" />
+				</svg>
+			</button>
+			<div id="" class="hidden lg:flex lg:flex-grow lg:items-center lg:w-full">
+				<ul class="flex justify-around items-center w-full text-lg lg:text-base">
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link active" href="#home">Home</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#about">About Us</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#services">Services</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#appointment">Appointment</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#gallery">Gallery</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#blog">Blogs</a>
+					</li>
+					<li class="nav-item hover:bg-gray-100 p-2 rounded-md">
+						<a class="nav-link" href="#contact">Contact us</a>
+					</li>
+				</ul>
 			</div>
 		</nav>
 	</header>
-	<div class="ulockd-home-slider">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="pogoSlider" id="js-main-slider">
-					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500"
-						style="background-image: url(images/slider-01.jpg)">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>WELCOME TO SOULBOUND CONFESSIONS</h1>
-								<p>
-									"Empowering minds, transforming lives: Your journey to
-									mental wellness starts here."
-								</p>
-								<a href="#contact" class="btn">Contact Us</a>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500"
-						style="background-image: url(images/slider-02.jpg)">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>We are Expert in The Field of Mental Health</h1>
-								<p>
-									"Empowering minds, transforming lives: Your journey to
-									mental wellness starts here."
-								</p>
-								<a href="#appointment" class="btn">Appointment</a>
-							</div>
-						</div>
+
+	<div class="relative">
+		<div class="bg-fixed bg-center">
+			<div id="slider" class="inset-0 z-0">
+				<video autoplay muted loop class="inset-0 w-full h-full object-cover">
+					<source src="images/video.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<div
+				class="flex items-center justify-center text-center bg-gradient-to-b from-black to-transparent z-10 absolute inset-0">
+				<div class="container mx-auto px-4">
+					<div class="text-white">
+						<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight my-8">
+							WELCOME TO SOULBOUND CONFESSIONS
+						</h1>
+						<p class="text-lg md:text-xl lg:text-2xl mb-8">
+							"Empowering minds, transforming lives: Your journey to mental
+							wellness starts here."
+						</p>
+						<a href="#about" class="btn bg-blue-800 hover:bg-blue-600 text-white py-2 px-4 mt-2 inline-block">
+							Explore
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="about" class="about-box">
-			<div class="about-a1">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="title-box">
-								<h2>About Us</h2>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12">
-							<div class="row align-items-center about-main-info">
-								<div class="col-lg-6 col-md-6 col-sm-12">
-									<h2>SOULBOUND CONFESSIONS AIM</h2>
-									<p>
-										We are dedicated to providing compassionate and effective
-										mental health care to individuals who are struggling with
-										mental health issues. Our team of highly trained and
-										experienced mental health professionals is committed to
-										helping our clients achieve their mental health goals. We
-										understand that mental health is a crucial aspect of overall
-										health and wellbeing, and we strive to provide the best
-										possible care to support our clients on their journey to
-										recovery. Thank you for considering our mental health center
-										as a resource for your mental health needs. We look forward
-										to supporting you on your journey to wellness.
-									</p>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12">
-									<div class="about-m">
-										<ul id="banner">
-											<li>
-												<video width="550px" height="400px" controls autoplay muted>
-													<source
-														src="images/pexels-los-muertos-crew-6836692-1920x1080-24fps.mp4"
-														type="video/mp4" />
-													<source src="movie.ogg" type="video/ogg" />
-													Your browser does not support the video tag.
-												</video>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+	</div>
+
+	<div id="about" class="py-24 bg-white">
+		<div class="container mx-auto px-4 lg:flex lg:items-center">
+			<div class="lg:w-1/2 lg:mx-4 lg:text-left pr-4">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
+					About Us
+					<img src="images/tag-line.png" alt="" class="ml-4 my-2 w-36 lg:items-center" />
+				</h2>
+				<p class="text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed text-justify">
+					We are dedicated to providing compassionate and effective mental
+					health care to individuals who are struggling with mental health
+					issues. Our team of highly trained and experienced mental health
+					professionals is committed to helping our clients achieve their
+					mental health goals. We understand that mental health is a crucial
+					aspect of overall health and wellbeing, and we strive to provide the
+					best possible care to support our clients on their journey to
+					recovery. Thank you for considering our mental health center as a
+					resource for your mental health needs. We look forward to supporting
+					you on your journey to wellness.
+				</p>
+			</div>
+			<div class="lg:w-1/2 lg:mt-0 mt-8 flex items-center justify-center">
+				<video autoplay muted loop class="w-full max-w-lg mx-auto rounded-lg shadow-lg">
+					<source src="images/video.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
 			</div>
 		</div>
-		<div id="services" class="services-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>Services</h2>
-						</div>
+	</div>
+	<div id="services" class="py-24 bg-gray-100">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col items-center mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center">
+					Services
+				</h2>
+				<img src="images/tag-line.png" alt="" class="w-36" />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<div class="serviceBox bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-around">
+					<div class="service-icon text-3xl text-blue-500 mb-4">
+						<i class="fa fa-h-square" aria-hidden="true"></i>
 					</div>
+					<h3 class="title text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 text-center">
+						SCREENING &amp; ASSESSMENT
+					</h3>
+					<p class="description text-base md:text-lg lg:text-xl text-gray-700 text-justify">
+						Screening and assessment are essential components of any effective
+						intervention or treatment program. Screening is a preliminary
+						process that is used to identify individuals who may be at risk of
+						a particular condition or problem.
+					</p>
 				</div>
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="owl-carousel owl-theme">
-							<div class="item">
-								<div class="serviceBox">
-									<div class="service-icon">
-										<i class="fa fa-h-square" aria-hidden="true"></i>
-									</div>
-									<h3 class="title">SCREENING & ASSESSMENT</h3>
-									<p class="description">
-										Screening and assessment are essential components of any
-										effective intervention or treatment program. Screening is a
-										preliminary process that is used to identify individuals who
-										may be at risk of a particular condition or problem.
-									</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="serviceBox">
-									<div class="service-icon">
-										<i class="fa fa-heart" aria-hidden="true"></i>
-									</div>
-									<h3 class="title">COUNSELLING SESSIONS</h3>
-									<p class="description">
-										Counseling sessions are a safe and confidential space for
-										individuals to explore their thoughts, feelings, and
-										behaviors with a trained professional.individuals gain
-										insight into their challenges, and develop strategies for
-										managing difficult situations.
-									</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="serviceBox">
-									<div class="service-icon">
-										<i class="fa fa-hospital-o" aria-hidden="true"></i>
-									</div>
-									<h3 class="title">YOGA & PHYSIOTHERAPY</h3>
-									<p class="description">
-										Yoga and physiotherapy are two practices that can greatly
-										benefit a person's physical and mental well-being. Yoga
-										involves a series of postures, breathing exercises, and
-										meditation techniques that can improve flexibility,
-										strength, balance, and relaxation.
-									</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="serviceBox">
-									<div class="service-icon">
-										<i class="fa fa-wheelchair" aria-hidden="true"></i>
-									</div>
-									<h3 class="title">VIDEO CONFERENCING SESSIONS</h3>
-									<p class="description">
-										Video conferencing sessions have become increasingly popular
-										in recent years, allowing people to connect face-to-face
-										from anywhere in the world. Video conferencing has become an
-										essential tool for collaboration and communication.
-									</p>
-								</div>
-							</div>
-						</div>
+				<div class="serviceBox bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-around">
+					<div class="service-icon text-3xl text-blue-500 mb-4">
+						<i class="fa fa-user-md" aria-hidden="true"></i>
 					</div>
+					<h3 class="title text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 text-center">
+						THERAPY &amp; COUNSELING
+					</h3>
+					<p class="description text-base md:text-lg lg:text-xl text-gray-700 text-justify">
+						Therapy and counseling services provide support and guidance to
+						individuals who are experiencing emotional or psychological
+						distress. Our therapists are trained to help clients explore their
+						feelings, beliefs, and behaviors in a safe and confidential
+						environment.
+					</p>
+				</div>
+				<div class="serviceBox bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-around">
+					<div class="service-icon text-3xl text-blue-500 mb-4">
+						<i class="fa fa-heartbeat" aria-hidden="true"></i>
+					</div>
+					<h3 class="title text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 text-center">
+						WELLNESS PROGRAMS
+					</h3>
+					<p class="description text-base md:text-lg lg:text-xl text-gray-700 text-justify">
+						Wellness programs focus on promoting overall health and well-being
+						through a variety of activities and interventions. These programs
+						may include fitness classes, nutrition counseling, stress
+						management techniques, and mindfulness practices.
+					</p>
+				</div>
+				<div class="serviceBox bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-around">
+					<div class="service-icon text-3xl text-blue-500 mb-4">
+						<i class="fa fa-comments" aria-hidden="true"></i>
+					</div>
+					<h3 class="title text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 text-center">
+						SUPPORT GROUPS
+					</h3>
+					<p class="description text-base md:text-lg lg:text-xl text-gray-700 text-justify">
+						Support groups offer individuals the opportunity to connect with
+						others who share similar experiences and challenges. These groups
+						provide emotional support, practical advice, and a sense of
+						community for participants.
+					</p>
 				</div>
 			</div>
 		</div>
-		<div id="appointment" class="appointment-main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>Appointment</h2>
+	</div>
+	<div id="appointment" class="py-24 bg-white">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col items-center mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center">
+					Make an Appointment
+				</h2>
+				<img src="images/tag-line.png" alt="" class="w-36" />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+				<div>
+					<form method="post" class="max-w-lg mx-auto bg-gray-100 p-6 rounded-lg shadow-lg" id="formappoint">
+						<div class="mb-4">
+							<label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+							<input type="text" id="name" name="name" placeholder="Your Name"
+								class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500"
+								required />
 						</div>
-					</div>
+						<div class="mb-4">
+							<label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+							<input type="email" id="email" name="email" placeholder="Your Email"
+								class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500"
+								required />
+						</div>
+						<div class="mb-4">
+							<label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+							<input type="tel" id="phone" name="phone" placeholder="Your Phone Number"
+								class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500"
+								required />
+						</div>
+						<div class="mb-4">
+							<label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+							<textarea id="message" name="message" rows="4" placeholder="Briefly describe your appointment needs."
+								class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 resize-none"
+								required></textarea>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 inline-block">
+								Submit Appointment
+							</button>
+						</div>
+					</form>
 				</div>
-				<div class="row">
-					<div class="col-lg-6 col-md-6">
-						<div class="well-block">
-							<div class="well-title">
-								<h2>Book an Appointment</h2>
-							</div>
-							<form>
-								<!-- Form start -->
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label" for="name">Name</label>
-											<input id="name" name="name" type="text" placeholder="Name"
-												class="form-control input-md" />
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label" for="email">Email</label>
-											<input id="email" name="email" type="email" placeholder="E-Mail"
-												class="form-control input-md" />
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label" for="date">Preferred Date</label>
-											<input id="date" name="date" type="date" placeholder="Preferred Date"
-												class="form-control input-md" />
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label" for="time">Preferred Time</label>
-											<select id="time" name="time" class="form-control">
-												<option value="8:00 to 9:00">
-													8:00 a.m to 11:00 a.m
-												</option>
-												<option value="9:00 to 10:00">
-													2:00 p.m to 5:00 P.M.
-												</option>
-												<option value="10:00 to 1:00">
-													7:00 p.m to 9:00 p.m
-												</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<label class="control-label" for="appointmentfor">Department</label>
-											<select id="appointmentfor" name="appointmentfor" class="form-control">
-												<option value="Choose Department">
-													Choose Department
-												</option>
-												<option value="Gynacology">Psychologist</option>
-												<option value="Dermatologist">Psychiatrist</option>
-												<option value="Orthology">Psychoanalyst</option>
-												<option value="Anesthesiology">Psychotherapist</option>
-												<option value="Ayurvedic">
-													Mental health counselor
-												</option>
-												<option value="Ayurvedic">
-													Family and marriage counselor
-												</option>
-												<option value="Ayurvedic">Addiction counselor</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<button id="singlebutton" name="singlebutton" class="new-btn-d br-2">
-												<a href="https://book.stripe.com/test_5kA8Ahe0yaCi760cMM"
-													target="_blank">Make An Appointment</a>
-											</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6">
-						<div class="well-block">
-							<div class="well-title">
-								<h2>Why Appointment with Us</h2>
-							</div>
-							<div class="feature-block">
-								<div class="feature feature-blurb-text">
-									<h4 class="feature-title">Expertise</h4>
-									<div class="feature-content">
-										<p>
-											Our team has extensive knowledge and experience in our
-											field, which means we can provide you with the best
-											possible advice and solutions for your needs.
-										</p>
-									</div>
-								</div>
-								<div class="feature feature-blurb-text">
-									<h4 class="feature-title">Personalized service</h4>
-									<div class="feature-content">
-										<p>
-											We take the time to get to know our clients and their
-											unique needs so that we can provide customized solutions
-											that meet their specific requirements.
-										</p>
-									</div>
-								</div>
-								<div class="feature feature-blurb-text">
-									<h4 class="feature-title">Quality assurance</h4>
-									<div class="feature-content">
-										<p>
-											We are committed to delivering high-quality service and
-											ensuring that our clients are satisfied with the results.
-										</p>
-									</div>
-								</div>
-								<div class="feature feature-blurb-text">
-									<h4 class="feature-title">Trustworthiness</h4>
-									<div class="feature-content">
-										<p>
-											We are a reputable and trustworthy company, and our
-											clients can feel confident that they are working with a
-											reliable partner.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="flex justify-center items-center">
+					<p class="text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed mb-6">
+						Ready to take the next step towards better mental health? Schedule
+						an appointment with one of our experienced therapists today. We
+						offer convenient online scheduling to accommodate your busy
+						lifestyle.
+					</p>
 				</div>
 			</div>
 		</div>
-		<div id="gallery" class="gallery-box">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>GALLERY</h2>
-						</div>
-					</div>
+	</div>
+	<div id="gallery" class="py-24 bg-gray-100">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col items-center mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center">
+					Gallery
+				</h2>
+				<img src="images/tag-line.png" alt="" class="w-36" />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="gallery-item">
+					<img src="images/slider-01.jpg" alt="Gallery Image 1" class="rounded-lg shadow-lg object-cover"
+						style="height: 300px" />
 				</div>
-
-				<div class="popup-gallery row clearfix">
-					<div class="col-md-3 col-sm-6">
-						<div class="box-gallery">
-							<img src="https://www.usnews.com/dims4/USNEWS/35ad45c/2147483647/resize/1200x%3E/quality/85/?url=https%3A%2F%2Fwww.usnews.com%2Fcmsmedia%2Fac%2F91%2Fbe994d364d3291e6e20f637e60d0%2F190617-nursechild-stock.jpg"
-								alt="" />
-							<div class="box-content">
-								<h3 class="title">Click to open</h3>
-								<ul class="icon">
-									<li>
-										<a
-											href="https://www.usnews.com/dims4/USNEWS/35ad45c/2147483647/resize/1200x%3E/quality/85/?url=https%3A%2F%2Fwww.usnews.com%2Fcmsmedia%2Fac%2F91%2Fbe994d364d3291e6e20f637e60d0%2F190617-nursechild-stock.jpg"><i
-												class="fa fa-picture-o" aria-hidden="true"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="box-gallery">
-							<img src="https://www.gannett-cdn.com/media/USATODAY/WiresImages/2012/10/26/19fd4c262e6d0f1e1f0f6a70670014b3-16_9.jpg"
-								alt="" />
-							<div class="box-content">
-								<h3 class="title">Click to open</h3>
-								<ul class="icon">
-									<li>
-										<a
-											href="https://www.gannett-cdn.com/media/USATODAY/WiresImages/2012/10/26/19fd4c262e6d0f1e1f0f6a70670014b3-16_9.jpg"><i
-												class="fa fa-picture-o" aria-hidden="true"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="box-gallery">
-							<img src="https://www.healthyplace.com/sites/default/files/images/stories/other-info/28-mental-health-facilities-healthyplace.jpg"
-								alt="" />
-							<div class="box-content">
-								<h3 class="title">Click to open</h3>
-								<ul class="icon">
-									<li>
-										<a
-											href="https://www.healthyplace.com/sites/default/files/images/stories/other-info/28-mental-health-facilities-healthyplace.jpg"><i
-												class="fa fa-picture-o" aria-hidden="true"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="box-gallery">
-							<img src="https://www.osmh.on.ca/uploads/2019/05/Hero-Desktop-12-1920x1013.jpg" alt="" />
-							<div class="box-content">
-								<h3 class="title">Click to open</h3>
-								<ul class="icon">
-									<li>
-										<a href="https://www.osmh.on.ca/uploads/2019/05/Hero-Desktop-12-1920x1013.jpg"><i
-												class="fa fa-picture-o" aria-hidden="true"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				<div class="gallery-item">
+					<img src="images/slider-02.jpg" alt="Gallery Image 2" class="rounded-lg shadow-lg object-cover"
+						style="height: 300px" />
+				</div>
+				<div class="gallery-item">
+					<img src="images/blog-img-03.jpg" alt="Gallery Image 3" class="rounded-lg shadow-lg object-cover"
+						style="height: 300px" />
 				</div>
 			</div>
 		</div>
-		<div id="blog" class="blog-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>BLOG</h2>
-						</div>
-					</div>
+	</div>
+	<div id="blog" class="py-24 bg-white">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col items-center mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center">
+					Latest Blogs
+				</h2>
+				<img src="images/tag-line.png" alt="" class="w-36" />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="blog-post bg-gray-100 p-6 rounded-lg shadow-lg">
+					<h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+						Coping with Stress: Strategies for Mental Well-being
+					</h3>
+					<p class="text-gray-700 mb-4">
+						Stress is a common experience for many people. In this blog post,
+						we explore strategies to cope with stress and promote mental
+						well-being.
+					</p>
+					<a href="#" class="text-blue-500 hover:underline">Read more</a>
 				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-sm-12">
-						<div class="blog-inner">
-							<div class="blog-img">
-								<img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
-							</div>
-							<div class="item-meta">
-								<a href="#"><i class="fa fa-comments-o"></i> 10 Comments </a>
-								<a href="#"><i class="fa fa-user-o"></i> Dr. Sameer</a>
-								<span class="dti">25 July 2022</span>
-							</div>
-							<h2>
-								"The Importance of Prioritizing Mental Health: A Call to Action"
-							</h2>
-							<p>
-								In recent years, there has been a growing awareness of the
-								importance of mental health. However, despite this increased
-								awareness, there is still a significant stigma surrounding
-								mental health issues, and many people continue to suffer in
-								silence. In this blog post, we will explore the importance of
-								prioritizing mental health and discuss what we can do to promote
-								mental wellness in our communities.
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12">
-						<div class="blog-inner">
-							<div class="blog-img">
-								<img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
-							</div>
-							<div class="item-meta">
-								<a href="#"><i class="fa fa-comments-o"></i> 15 Comments </a>
-								<a href="#"><i class="fa fa-user-o"></i> Dr. Vivek</a>
-								<span class="dti">13 Jan 2023</span>
-							</div>
-							<h2>
-								Understanding and Coping with Anxiety: Tips and Techniques
-							</h2>
-							<p>
-								Anxiety is a common experience that can range from mild to
-								severe and interfere with daily life. Understanding the causes
-								and symptoms of anxiety is the first step towards managing it
-								effectively. Some common causes of anxiety include stress,
-								genetics, and traumatic experiences. Symptoms can include
-								excessive worry, restlessness, difficulty concentrating, and
-								physical symptoms such as sweating or a racing heart.
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12">
-						<div class="blog-inner">
-							<div class="blog-img">
-								<img class="img-fluid" src="images/blog-img-03.jpg" alt="" />
-							</div>
-							<div class="item-meta">
-								<a href="#"><i class="fa fa-comments-o"></i> 25 Comments </a>
-								<a href="#"><i class="fa fa-user-o"></i> Dr. Veer</a>
-								<span class="dti">20 February 2023</span>
-							</div>
-							<h2>Mental Health Stigma: Breaking Down Barriers to Treatment</h2>
-							<p>
-								Mental health stigma is a significant barrier to treatment,
-								preventing many individuals from seeking help and receiving the
-								care they need. It can be incredibly isolating and can leave
-								individuals feeling ashamed or embarrassed about their mental
-								health concerns. Stigma can take many forms, including
-								discrimination, stereotypes, and negative attitudes towards
-								those with mental health issues.
-							</p>
-						</div>
-					</div>
+				<div class="blog-post bg-gray-100 p-6 rounded-lg shadow-lg">
+					<h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+						Understanding Depression: Signs and Symptoms
+					</h3>
+					<p class="text-gray-700 mb-4">
+						Depression affects millions of people worldwide. Learn about the
+						signs and symptoms of depression in this informative blog post.
+					</p>
+					<a href="#" class="text-blue-500 hover:underline">Read more</a>
+				</div>
+				<div class="blog-post bg-gray-100 p-6 rounded-lg shadow-lg">
+					<h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+						Building Resilience: Tips for Overcoming Adversity
+					</h3>
+					<p class="text-gray-700 mb-4">
+						Resilience is key to navigating life's challenges. Discover
+						practical tips to build resilience and overcome adversity in this
+						insightful blog post.
+					</p>
+					<a href="#" class="text-blue-500 hover:underline">Read more</a>
 				</div>
 			</div>
 		</div>
-
-		<div id="contact" class="contact-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>CONTACT US</h2>
+	</div>
+	<div id="contact" class="py-24 bg-gray-900 text-white">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col items-center mb-8">
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-center">
+					Contact Us
+				</h2>
+				<img src="images/tag-line.png" alt="" class="w-36" />
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+				<div>
+					<form action="#" method="POST" class="max-w-lg mx-auto">
+						<div class="mb-4">
+							<label for="contact-name" class="block text-gray-400 mb-1">Full Name</label>
+							<input type="text" id="contact-name" name="contact-name"
+								class="w-full px-3 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:border-blue-500"
+								required />
 						</div>
-					</div>
+						<div class="mb-4">
+							<label for="contact-email" class="block text-gray-400 mb-1">Email Address</label>
+							<input type="email" id="contact-email" name="contact-email"
+								class="w-full px-3 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:border-blue-500"
+								required />
+						</div>
+						<div class="mb-4">
+							<label for="contact-message" class="block text-gray-400 mb-1">Message</label>
+							<textarea id="contact-message" name="contact-message" rows="4"
+								class="w-full px-3 py-2 bg-gray-800 text-white rounded-md border border-gray-700 focus:outline-none focus:border-blue-500 resize-none"
+								required></textarea>
+						</div>
+						<button type="submit" class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 inline-block">
+							Send Message
+						</button>
+					</form>
 				</div>
-				<div class="row">
-					<div class="col-lg-12 col-xs-12">
-						<div class="contact-block">
-							<form id="contactForm">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name"
-												placeholder="Your Name" required data-error="Please enter your name" />
-											<div class="help-block with-errors"></div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" placeholder="Your Email" id="email" class="form-control"
-												name="name" required data-error="Please enter your email" />
-											<div class="help-block with-errors"></div>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" placeholder="Your number" id="number"
-												class="form-control" name="number" required
-												data-error="Please enter your number" />
-											<div class="help-block with-errors"></div>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<textarea class="form-control" id="message" placeholder="Your Message"
-												rows="8" data-error="Write your message" required></textarea>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="submit-button text-center">
-											<button class="btn btn-common" id="submit" type="submit">
-												Send Message
-											</button>
-											<div id="msgSubmit" class="h3 text-center hidden"></div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="col-lg-12 col-xs-12">
-						<div class="left-contact">
-							<h2>DETAILS</h2>
-							<div class="flex">
-							<div class="media cont-line">
-								<div class="media-left icon-b">
-									<i class="fa fa-location-arrow" aria-hidden="true"></i>
-								</div>
-								<div class="media-body dit-right">
-									<h4>Address</h4>
-									<p>
-										FC-26, Panduk Shila Marg, Zero Pusta Rd, Shastri Park,
-										Shahdara, New Delhi, Delhi 110053
-									</p>
-								</div>
-							</div>
-							<div class="media cont-line">
-								<div class="media-left icon-b">
-									<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-								</div>
-								<div class="media-body dit-right">
-									<h4>Phone Number</h4>
-									<p>
-									+91 9988776655
-								</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div>
+					<p class="text-xl md:text-2xl font-bold mb-4">Visit Us</p>
+					<p class="mb-2">
+						<i class="fa fa-map-marker mr-2"></i>123 Soulbound Street,
+						New Delhi, India
+					</p>
+					<p class="mb-2"><i class="fa fa-phone mr-2"></i>+1 234 567 890</p>
+					<p class="mb-2">
+						<i class="fa fa-envelope mr-2"></i>info@soulboundconfessions.com
+					</p>
+					<p class="mb-2">
+						<i class="fa fa-clock-o mr-2"></i>Mon - Fri, 9:00 AM - 6:00 PM
+					</p>
 				</div>
 			</div>
 		</div>
-		<div class="subscribe-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="subscribe-inner text-center clearfix">
-							<h2>Subscribe</h2>
-							<form action="index.html" method="post">
-								<div class="form-group">
-									<input class="form-control-1" id="email-1" name="email" placeholder="Email Address"
-										required="" type="email" />
-								</div>
-								<div class="form-group">
-									<button type="submit" class="new-btn-d br-2">
-										Subscribe
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+	</div>
+	<footer class="bg-gray-800 text-white py-6">
+		<div class="container mx-auto px-4 flex justify-around items-center max-md:flex-col">
+			<p class="text-center text-sm">
+				© 2024 Soulbound Confessions. All rights reserved.
+			</p>
+			<div class="social mt-4">
+				<a href="#" class="text-gray-400 hover:text-white mr-4"><i class="fa fa-facebook fa-lg"></i></a>
+				<a href="#" class="text-gray-400 hover:text-white mr-4"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="#" class="text-gray-400 hover:text-white"><i class="fa fa-instagram fa-lg"></i></a>
 			</div>
 		</div>
-		<div class="main-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6"></div>
-					<div class="col-lg-6">
-						<div class="wel-nots">
-							<p>Welcome to One-Stop Solutions to Mental Health Problems.</p>
-						</div>
-						<div class="right-top">
-							<ul>
-								<li>
-									<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
-		<!-- ALL JS FILES -->
-		<script src="js/jquery.min.js"></script>
- 			<script src="js/jquery.pogo-slider.min.js"></script>
-		<script src="js/slider-index.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/images-loded.min.js"></script>
+	</footer>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
